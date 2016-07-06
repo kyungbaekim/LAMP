@@ -1,0 +1,8 @@
+1. Error: <?php ?> tags are missing.
+   Fix: make sure to have the page start with <?php and end with ?>
+
+2. Error: DB_HOST is not defined in line #1
+   Fix: change #1 to define('DB_HOST', 'localhost');
+
+3. Error: DB_USER is not define in line #2
+   Fix: change #2 to define('DB_HOST', 'root');

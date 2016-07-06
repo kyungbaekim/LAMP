@@ -1,0 +1,37 @@
+p{
+  font-size: 20px;
+  font-weight: bold;
+}
+.wrapper{
+  width: 850px;
+  height: 700px;
+  margin: 0px auto;
+  border: 1px solid black;
+}
+.options{
+  width: 840px;
+  height: 160px;
+  /*border: 1px solid red;*/
+  padding: 40px 0px 0px 10px;
+}
+.gold{
+  height: 50px;
+  /*border: 1px solid grey;*/
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+}
+.farm, .cave, .house, .casino{
+  border: 2px solid black;
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+}
+.activity{
+  padding-left: 10px;
+}
+#reset{
+  margin: 20px 0px 0px 10px;
+}

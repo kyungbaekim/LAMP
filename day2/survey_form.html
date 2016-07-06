@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <style type="text/css">
+      .wrapper{
+        border: 1px solid black;
+        height: 280px;
+        width: 395px;
+        margin: 10px auto;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='wrapper'>
+      <form action='result.php' method='post'>
+        <p>Your name: <input type='text' name='full_name'></p>
+        <p>Dojo Locaion:
+        <select name='location'>
+          <option value='Silicon Valley, CA'>Silicon Valley, CA</option>
+          <option value='Los Angeles, CA'>Los Angeles, CA</option>
+          <option value='Seattle, WA'>Seattle, WA</option>
+          <option value='Dallas, TX'>Dallas, TX</option>
+          <option value='Chicago, IL'>Chicago, IL</option>
+        </select></p>
+        <p>Favorite Language:
+        <select name='language'>
+          <option value='Rail'>Rail</option>
+          <option value='Javascript'>Javascript</option>
+          <option value='Python'>Python</option>
+          <option value='Rudy'>Ruby</option>
+          <option value='PHP'>PHP</option>
+        </select></p>
+        <p>Comments (optional):
+        <textarea name='comment' rows="5" cols="50"></textarea></p>
+        <input type='submit' value='Submit'>
+      </form>
+    </div>
+  </body>
+</html>

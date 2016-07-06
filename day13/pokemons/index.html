@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon</title>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-2.2.2.js'></script>
+  <script>
+    var temp = [];
+    $(document).ready(function(){
+      for(var i=1; i<152; i++){
+        get_data(i)+"<br>";
+
+      }
+    })
+
+    function get_data(i){
+      $.get("http://pokeapi.co/api/v2/pokemon-form/"+i+"/", function(res) {
+        // console.log(str)
+        $('body').append("<img src='"+res.sprites.front_default+"'>");
+      }, "json");
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

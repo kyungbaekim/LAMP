@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-2.2.2.js'></script>
+  <script>
+    var url = '';
+    var db = 'pubmed';
+    var query = 'asthma';
+    var retmax = '5';
+    var retmode = 'json';
+    var base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
+    $(document).ready(function() {
+      var location = '';
+      var url = '';
+      $('form').submit(function() {
+        location = $('#location').val();
+        API_key = '0bde9fbcb42decc677cb77b96e01db0d';
+        url = 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&APPID='+API_key;
+        console.log(location)
+        console.log(url)
+        $.get(url, function(res) {
+            // your code here
+            $(".information").html("");
+            var fahrenheit = Math.round(res.main.temp * 9/5 - 459.67);
+            $('.information').append("<h1>"+res.name+"</h1>");
+            $('.information').append("<p>Temperature: "+fahrenheit+"</p>");
+        }, 'json');
+        // don't forget to return false so the page doesn't refresh
+        return false;
+      });
+    });
+
+  </script>
+  <style>
+    .wrapper{
+      width: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div class='wrapper'>
+    <form>
+      <input type='text' id='location'>
+      <input type='submit' value='Search Weather'>
+    </form>
+    <div class='information'></div>
+  </div>
+</body>
+</html>

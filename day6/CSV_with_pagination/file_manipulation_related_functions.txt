@@ -1,0 +1,6 @@
+To get you started, you might want to look up for the following PHP functions:
+?ini_set (for this exercise, we set 'auto_detect_line_endings' to TRUE) so your code will read: ?ini_set('auto_detect_line_endings', true)  - This tells your script to automatically detect when the CSV file breaks a line
+
+?fopen ?This is required to open your CSV file and begin using the data it contains.
+
+?fgetcsv ?This command allows the user to grab information from a file opened with fopen

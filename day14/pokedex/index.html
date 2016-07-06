@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pokedex</title>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-2.2.2.js'></script>
+  <script>
+    $(document).ready(function(){
+      for(var i=1; i<152; i++){
+        get_char_img(i)+"<br>";
+      }
+    })
+
+    function get_char_img(i){
+      $.get("http://pokeapi.co/api/v2/pokemon/"+i+"/", function(res) {
+        console.log(res.sprites.front_default)
+        $('.images').append("<img onclick='javascript:get_char_data("+i+")' src='"+res.sprites.front_default+"'>");
+      }, "json");
+    }
+
+    function get_char_data(i){
+      $(".information").html("");
+      $.get("http://pokeapi.co/api/v2/pokemon/"+i+"/", function(res) {
+        $('.information').append("<h2>"+res.name+"</h2>");
+        $('.information').append("<p class='image'>Display pokemon image</p>");
+        $('.information').append("<p><b>Types</b>:</p>");
+        $('.information').append("<ul>");
+        for(var j=0; j<(res.types).length; j++){
+          $('.information').append("<li>"+res.types[j].type.name+"</li>");
+        }
+        $('.information').append("</ul>");
+        $('.information').append("<p><b>Height:</b> "+res.height+"</p>");
+        $('.information').append("<p><b>Weight:</b> "+res.weight+"</p>");
+        $('p.image').html("<img src='"+res.sprites.front_default+"'>");
+      }, "json");
+    }
+  </script>
+  <style>
+    .wrapper{
+      width: 1000px;
+    }
+    .images, .information{
+      display: inline-block;
+      vertical-align: top;
+    }
+    .images{
+      width: 770px;
+      /*border: 1px solid black;*/
+    }
+    .information{
+      width: 210px;
+      height: 400px;
+      border: 5px solid lightgrey;
+      position: fixed;;
+      top: 10px;
+    }
+    h2{
+      text-align: center;
+    }
+    p{
+      padding-left: 10px;
+    }
+    li{
+      padding-left: 20px;
+    }
+    .image{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class='wrapper'>
+    <div class='images'></div>
+    <div class='information'></div>
+  </div>
+</body>
+</html>

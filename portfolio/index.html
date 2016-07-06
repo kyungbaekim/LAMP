@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css' >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css' >
+		<link href='styles/reset.css' type='text/css' rel='stylesheet' />
+		<link href='styles/styles.css' type='text/css' rel='stylesheet' />
+		<link href='multi-screen-css.css' type='text/css' rel='stylesheet' />
+		<script type='text/javascript' src='http://code.jquery.com/jquery-latest.pack.js'></script>
+		<script type='text/javascript' src='multi-screen.js'></script>
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				MultiScreen.init();
+				$('#bottom-via-home').click(function () {
+					MultiScreen.switch_screens(
+						{target_id: 'center-screen', enter_animation_command: 'bottom', exit_animation_command: 'top', chain_animation_options:
+							{target_id: 'contact', enter_animation_command: 'bottom', exit_animation_command: 'top'}
+						});
+				});
+
+				$('#top-via-home').click(function () {
+					MultiScreen.switch_screens(
+						{target_id: 'center-screen', enter_animation_command: 'top', exit_animation_command: 'bottom', chain_animation_options:
+							{target_id: 'projects', enter_animation_command: 'top', exit_animation_command: 'bottom'}
+						});
+				});
+
+				$('#right-via-home').click(function () {
+					MultiScreen.switch_screens(
+						{target_id: 'center-screen', enter_animation_command: 'right', exit_animation_command: 'left', chain_animation_options:
+							{target_id: 'skills', enter_animation_command: 'right', exit_animation_command: 'left'}
+						});
+				});
+
+				$('#left-via-home').click(function () {
+					MultiScreen.switch_screens(
+						{target_id: 'center-screen', enter_animation_command: 'left', exit_animation_command: 'right', chain_animation_options:
+							{target_id: 'about', enter_animation_command: 'left', exit_animation_command: 'right'}
+						});
+				});
+			});
+		</script>
+		<title>My Portfolio</title>
+		<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+	</head>
+	<body>
+		<div id='center-screen' class='ms-container ms-default'>
+			<div class='center'>
+				<h1>Hello, my name is<br>Kyungbae Kim.</h1><br><br>
+				<h2>I am a full stack developer</h2><br>
+				<span class='home margin-bottom'>with a diverse set of skills, ranging  from<br>HTML/CSS/Javascript, all the way to<br> LAMP, MEAN, Ruby on Rails stacks</span>
+				<nav id='nav-1' class='line-height'>
+					<a href='javascript:void(0)' class='link link-home ms-nav-link' data-ms-target='projects' data-ms-exit-animation='bottom' data-ms-enter-animation='top'>PROJECTS</a>
+					<a href='javascript:void(0)' class='link link-home ms-nav-link' data-ms-target='skills' data-ms-exit-animation='left' data-ms-enter-animation='right'>SKILLS</a>
+					<a href='javascript:void(0)' class='link link-home ms-nav-link' data-ms-target='about' data-ms-exit-animation='right' data-ms-enter-animation='left'>ABOUT</a>
+					<a href='javascript:void(0)' class='link link-home ms-nav-link' data-ms-target='contact' data-ms-exit-animation='top' data-ms-enter-animation='bottom'>CONTACT</a>
+				</nav>
+			</div>
+		</div>
+		<div id='projects' class='ms-container'>
+			<div class='box'>
+				<div class='center'>
+					<h2 class='margin-bottom'>PROJECTS</h2>
+					<div class='projects1'>
+						<div class='project1_1'>
+							<a href='http://www.themovieseeker.com/' target='_blank'><img src='images/themovieseeker.png' style='width: 100%' alt='MovieSeeker'></a>
+							<p><u>The Movieseeker</u><br>A movie application that implement 4 movie APIs to display movie showtimes, trailers, news, and reviews. It allows users to leave movie reviews after registration/login.</p><br>
+							<p><u>Technologies</u><br>MEAN, Bootstrap, AWS</p>
+						</div>
+						<div class='project1_2'>
+							<a href='http://52.37.140.22/' target='_blank'><img src='images/event_planner_Ruby.png' style='width: 100%' alt='Event Planner'></a>
+							<p><u>Event Planner</u><br>A application that allows users to register/login and create, join events. Also, it allows users to leave comments on existing events.</p><br>
+							<p><u>Technologies</u><br>Ruby on Rails, SQLite3, AWS</p>
+						</div>
+						<div class='project1_3'>
+							<a href='http://52.40.54.112/' target='_blank'><img src='images/discussion_board_MEAN.png' style='width: 100%' alt='Discussion Board'></a>
+							<p><u>Discussion Board</u><br>A simple community site that allows users to create topics and posts on the topics, comments on the posts.</p><br>
+							<p><u>Technologies</u><br>MEAN, AWS</p>
+						</div>
+					</div>
+					<div class='projects2'>
+						<p><u>More projects on GitHub</p></u><br>
+						<ul>
+							<li><a href='https://github.com/kyungbaekim/lead_search_PHP' target='_blank'>1. Pagination Search(LAMP, jQuery): A simple search application with pagination.</a></li>
+							<li><a href='https://github.com/kyungbaekim/mini_store_MEAN.git' target='_blank'>2. Mini Store(MEAN): A simple ecommerce site where you can add, remove, edit products, customers, orders.</a></li>
+							<li><a href='https://github.com/kyungbaekim/MEAN_stack/tree/master/day4/group_chat' target='_blank'>3. Chatroom(MEAN): A simple application that allows users to chat with friends using socket communications.</a></li>
+						</ul>
+					</div>
+					<nav id='nav-1' class='line-height'>
+						<a href='javascript:void(0)' class='link link-project ms-nav-link' data-ms-target='center-screen' data-ms-exit-animation='top' data-ms-enter-animation='bottom'>GO HOME</a>
+						<a href='javascript:void(0)' class='link link-project ms-nav-link' data-ms-target='skills' data-ms-exit-animation='topleft' data-ms-enter-animation='bottomright'>SKILLS</a>
+						<a href='javascript:void(0)' class='link link-project ms-nav-link' data-ms-target='about' data-ms-exit-animation='topright' data-ms-enter-animation='bottomleft'>ABOUT</a>
+						<a class='link link-project' href='javascript:void(0)' id='bottom-via-home'>CONTACT</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div id='skills' class='ms-container'>
+			<div class='box'>
+				<div class='center'>
+					<h2 class='margin-bottom'>SKILLS</h2>
+					<span class='skills'>I have a wide range of skills from front-end development<br>(HTML/CSS/Javascript) to back-end development using open<br>source technologies such as LAMP(PHP, MySQL, CodeIgniter),<br>MEAN(MongoDB, Express.JS, AngularJS, NodeJS), Ruby on Rails.</span>
+					<div class='stacks'>
+						<div class='list1'>
+							<img src='images/html.png' style='width: 100%' alt='HTML/CSS'>
+							<p>HTML5, CSS, Javascript, jQuery</p>
+						</div>
+						<div class='list2'>
+							<img src='images/lamp.png' style='width: 100%' alt='LAMP'>
+							<p>PHP, MySQL, Apache, Linux</p>
+						</div>
+						<div class='list3'>
+							<img src='images/mean.png' style='width: 100%' alt='MEAN'>
+							<p>MongoDB, Express.JS, Node.JS, Angular.JS, JSON, RESTful, API</p>
+						</div>
+						<div class='list4'>
+							<img src='images/ruby_on_rails.png' style='width: 70%' alt='RoR'>
+							<p>Ruby, Rails, ActiveRecords, TDD, SQLite</p>
+						</div>
+					</div>
+					<nav id='nav-1' class='line-height'>
+						<a href='javascript:void(0)' class='link link-skill ms-nav-link' data-ms-target='center-screen' data-ms-exit-animation='right' data-ms-enter-animation='left'>GO HOME</a>
+						<a href='javascript:void(0)' class='link link-skill ms-nav-link' data-ms-target='projects' data-ms-exit-animation='bottomright' data-ms-enter-animation='topleft'>PROJECTS</a>
+						<a href='javascript:void(0)' id='left-via-home' class='link link-skill'>ABOUT</a>
+						<a href='javascript:void(0)' class='link link-skill ms-nav-link' data-ms-target='contact' data-ms-exit-animation='topright' data-ms-enter-animation='bottomleft'>CONTACT</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div id='about' class='ms-container'>
+			<div class='box'>
+				<div class='center'>
+					<h2 class='margin-bottom'>ABOUT ME</h2>
+					<span class='about'>Hello, my name is <u style= font-size:1.7em;>Kyungbae Kim</u> and I am a Seattle-based<br> full stack web developer. I am a passionated and enthusiastic developer<br>who want to make a difference in the lives of clients and users.<br><br>I studied Electrical Engineering at University of Washington and worked as a<br>Quality Assurance Engineer for 7 years after graduation.<br>Because I love to create web things, I became a full stack developer.<br><br>Apart from programming, I love to play sports such as<br>basketball, pingpong, volleyball, etc.<br>But most importantly, I love to spend quality time with my friends and family.</span>
+					<nav class='line-height'>
+						<a href='javascript:void(0)' class='link link-about ms-nav-link' data-ms-target='center-screen' data-ms-exit-animation='left' data-ms-enter-animation='right'>GO HOME</a>
+						<a href='javascript:void(0)' class='link link-about ms-nav-link' data-ms-target='projects' data-ms-exit-animation='bottomleft' data-ms-enter-animation='topright'>PROJECT</a>
+						<a href='javascript:void(0)' id='right-via-home' class='link link-about '>SKILLS</a>
+						<a href='javascript:void(0)' class='link link-about ms-nav-link' data-ms-target='contact' data-ms-exit-animation='topleft' data-ms-enter-animation='bottomright'>CONTACT</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div id='contact' class='ms-container'>
+			<div class='box'>
+				<div class='center'>
+					<h2 class='margin-bottom'>CONTACT</h2>
+					<span class='contact'>I am looking for a new challenge in which<br>I can expend my skills, so get in touch:</span><br><br>
+					<div class='my_picture'>
+						<img id='picture' src='images/profile_web.jpg' style='width: 100%' alt='profile'>
+					</div>
+					<div class='email_address'>
+						<img class='email' src='images/linkedin-logo3.png' width='30' height='30'>&nbsp;
+						<a href='https://www.linkedin.com/in/kyungbae-kim-38340136' target='_blank'><span style='font-size: 0.9em'>LinkedIn</span></a><br>
+						<img class='email' src='images/email.png' width='50' height='50'>&nbsp;<a href='mailto:kyungbaekim@gmail.com'><span style='font-size: 0.9em'>kyungbaekim@gmail.com</span></a>
+					</div>
+					<nav class='line-height'>
+						<a href='javascript:void(0)' class='link link-contact ms-nav-link' data-ms-target='center-screen' data-ms-exit-animation='bottom' data-ms-enter-animation='top'>GO HOME</a>
+						<a href='javascript:void(0)' id='top-via-home' class='link link-contact'>PROJECT</a>
+						<a href='javascript:void(0)' class='link link-contact ms-nav-link' data-ms-target='skills' data-ms-exit-animation='bottomleft' data-ms-enter-animation='topright'>SKILLS</a>
+						<a href='javascript:void(0)' class='link link-contact ms-nav-link' data-ms-target='about' data-ms-exit-animation='bottomright' data-ms-enter-animation='topleft'>ABOUT</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
